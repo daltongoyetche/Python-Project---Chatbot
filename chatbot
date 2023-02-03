@@ -1,0 +1,35 @@
+import random
+# Define a list of possible greetings
+greetings = ['hi', 'hello', 'hey', 'hey there', 'greetings']
+
+# Define a list of possible responses to greetings
+greeting_responses = ['hi there', 'hello', 'hey', 'howdy', 'hi']
+
+# Define a list of possible farewells
+farewells = ['bye', 'goodbye', 'see you later', 'farewell']
+
+# Define a list of possible responses to farewells
+farewell_responses = ['goodbye', 'see you later', 'farewell']
+
+# Define a list of possible questions
+questions = ['how are you', 'how are things', 'how do you do']
+
+# Define a list of possible responses to questions
+question_responses = ['I am fine', 'doing well', 'can you help me']
+
+# Define a function to respond to a user input
+def respond(message):
+    if message in greetings:
+        return random.choice(greeting_responses)
+    elif message in farewells:
+        return random.choice(farewell_responses)
+    elif message in questions:
+        return random.choice(question_responses)
+    else:
+        return "I don't understand what you're saying"
+
+# Continuously prompt the user for input
+while True:
+    message = input("You: ")
+    response = respond(message)
+    print("Chatbot:", response)
